@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoropioKitchen.API", "LoropioKitchen.API\LoropioKitchen.API.csproj", "{9878025F-C289-4631-879C-79E2879DA6A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoropioKitchen.Application", "..\LoropioKitchen.Application\LoropioKitchen.Application.csproj", "{C98F71FE-F080-4716-9264-94CDB4717C45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoropioKitchen.Application.Tests", "..\LoropioKitchen.Application.Tests\LoropioKitchen.Application.Tests.csproj", "{8C5E259C-41BD-4E56-9004-D7ACB59A575D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoropioKitchen.Data", "..\LoropioKitchen.Data\LoropioKitchen.Data.csproj", "{2252585D-30D6-475B-B174-B3A85EC18FAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoropioKitchen.Domain", "..\LoropioKitchen.Domain\LoropioKitchen.Domain.csproj", "{9880E441-B371-4DB9-8514-01874A864330}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9878025F-C289-4631-879C-79E2879DA6A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9878025F-C289-4631-879C-79E2879DA6A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9878025F-C289-4631-879C-79E2879DA6A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9878025F-C289-4631-879C-79E2879DA6A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C98F71FE-F080-4716-9264-94CDB4717C45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98F71FE-F080-4716-9264-94CDB4717C45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98F71FE-F080-4716-9264-94CDB4717C45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98F71FE-F080-4716-9264-94CDB4717C45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C5E259C-41BD-4E56-9004-D7ACB59A575D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C5E259C-41BD-4E56-9004-D7ACB59A575D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C5E259C-41BD-4E56-9004-D7ACB59A575D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C5E259C-41BD-4E56-9004-D7ACB59A575D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2252585D-30D6-475B-B174-B3A85EC18FAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2252585D-30D6-475B-B174-B3A85EC18FAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2252585D-30D6-475B-B174-B3A85EC18FAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2252585D-30D6-475B-B174-B3A85EC18FAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9880E441-B371-4DB9-8514-01874A864330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9880E441-B371-4DB9-8514-01874A864330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9880E441-B371-4DB9-8514-01874A864330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9880E441-B371-4DB9-8514-01874A864330}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D8BFC926-B378-48F8-9808-B72ECCB06B46}
+	EndGlobalSection
+EndGlobal
