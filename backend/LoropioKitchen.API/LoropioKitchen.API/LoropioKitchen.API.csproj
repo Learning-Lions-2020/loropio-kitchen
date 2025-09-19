@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\LoropioKitchen.Data\LoropioKitchen.Data.csproj" />
+  </ItemGroup>
+
 </Project>
