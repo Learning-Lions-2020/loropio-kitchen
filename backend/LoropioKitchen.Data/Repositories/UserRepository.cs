@@ -7,65 +7,31 @@ namespace LoropioKitchen.Data.Repositories;
 
 public class UserRepository : IUserRepository
 {
-    private readonly LoropioKitchenDbContext _dbContext;
-
+    private readonly LoropioKitchenDbContext _context;
 
     public UserRepository(LoropioKitchenDbContext dbContext)
     {
-        _dbContext = dbContext;
+        _context = dbContext;
     }
 
-
-    public async Task AddAsync(User user, CancellationToken cancellationToken = default)
+    public async Task<User?> GetByEmailAsync(string email)
     {
-        await _dbContext.Users.AddAsync(user, cancellationToken);
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
-
-    public async Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken = default)
+    public async Task<User?> GetByPhoneAsync(string phoneNumber)
     {
-        if (string.IsNullOrWhiteSpace(email)) return null;
-        var normalized = email.Trim();
-        return await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == normalized, cancellationToken);
+        return await _context.Users.FirstOrDefaultAsync(u => u.PhoneNumber == phoneNumber);
     }
 
-
-    public async Task<User?> GetByPhoneAsync(string phone, CancellationToken cancellationToken = default)
+    public async Task AddAsync(User user)
     {
-        if (string.IsNullOrWhiteSpace(phone)) return null;
-        var normalized = phone.Trim();
-        return await _dbContext.Users.FirstOrDefaultAsync(u => u.PhoneNumber == normalized, cancellationToken);
+        await _context.Users.AddAsync(user);
     }
 
-
-    public async Task<User?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+    public async Task SaveChangesAsync()
     {
-        return await _dbContext.Users.FindAsync(new object[] { id }, cancellationToken);
+        await _context.SaveChangesAsync();
     }
 
-
-    public async Task<User?> GetByEmailOrPhoneAsync(string identifier, CancellationToken cancellationToken = default)
-    {
-        if (string.IsNullOrWhiteSpace(identifier)) return null;
-        var trimmed = identifier.Trim();
-        if (trimmed.Contains("@"))
-        {
-            return await GetByEmailAsync(trimmed, cancellationToken);
-        }
-
-
-        return await GetByPhoneAsync(trimmed, cancellationToken);
-    }
-
-
-    public void Update(User user)
-    {
-        _dbContext.Users.Update(user);
-    }
-
-
-    public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        await _dbContext.SaveChangesAsync(cancellationToken);
-    }
 }
