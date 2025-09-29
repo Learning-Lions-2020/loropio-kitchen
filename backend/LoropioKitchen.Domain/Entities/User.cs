@@ -10,7 +10,6 @@ public class User
     public UserStatus Status { get; private set; } = UserStatus.Active;
     public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
 
-    // Factory or update methods
     public User(string name, string email, string phoneNumber, UserRole role)
     {
         Name = name;
