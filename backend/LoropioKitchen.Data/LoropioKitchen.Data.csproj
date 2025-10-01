@@ -15,4 +15,9 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LoropioKitchen.Application\LoropioKitchen.Application.csproj" />
+    <ProjectReference Include="..\LoropioKitchen.Domain\LoropioKitchen.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
