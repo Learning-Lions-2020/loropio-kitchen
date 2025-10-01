@@ -12,6 +12,8 @@ public class LoropioKitchenDbContext : DbContext
 
 
     public DbSet<User> Users { get; set; } = null!;
+    public DbSet<OtpCode> OtpCodes { get; set; } = null!;
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -30,6 +32,21 @@ public class LoropioKitchenDbContext : DbContext
 
             entity.HasIndex(u => u.Email).IsUnique();
             entity.HasIndex(u => u.PhoneNumber).IsUnique();
+        });
+
+        modelBuilder.Entity<OtpCode>(entity =>
+        {
+            entity.ToTable("otpcodes");
+            entity.HasKey(o => o.Id);
+
+            entity.Property(o => o.CodeHash).IsRequired();
+
+            entity.HasOne(o => o.User)
+                  .WithMany()
+                  .HasForeignKey(o => o.UserId)
+                  .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(o => o.UserId);
         });
     }
 }
