@@ -14,8 +14,7 @@ options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IOtpRepository, OtpRepository>();
 
-builder.Services.AddScoped<GmailEmailService>();
-builder.Services.AddScoped<INotificationService, FirebaseNotificationService>();
+builder.Services.AddScoped<INotificationService, GmailEmailService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
